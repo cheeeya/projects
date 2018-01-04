@@ -1,0 +1,22 @@
+head, body, section, aside, h2, p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+
+}
+
+body {
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+ol, ul {
+  list-style: none;
+}
