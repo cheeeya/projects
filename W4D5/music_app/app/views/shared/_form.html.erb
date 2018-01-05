@@ -1,0 +1,18 @@
+<% if action == :signup %>
+  <% action_url = users_url %>
+  <% button_text = 'Sign up' %>
+<% elsif action == :signin  %>
+  <% action_url = session_url %>
+  <% button_text = 'Sign in' %>
+<% end %>
+
+<section>
+  <%= form_tag(action_url, method: 'post') do %>
+    <%= auth_token %>
+    <%= label_tag(:email, "Email: ") %>
+    <%= text_field_tag("user[email]") %>
+    <%= label_tag(:password, "Password: ") %>
+    <%= password_field_tag("user[password]") %>
+    <%= submit_tag(button_text) %>
+  <% end %>
+</section>
