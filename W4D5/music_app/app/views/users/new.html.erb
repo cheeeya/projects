@@ -1,4 +1,8 @@
-<%= render 'shared/form', action: :signup %>
+<% if flash.now[:error] %>
+  <%= flash.now[:error] %>
+<% end %>
+
+<%= render 'shared/form_user', action: :signup %>
 
 
 <!-- <section>

@@ -7,7 +7,7 @@
 <% end %>
 
 <section>
-  <%= form_tag(action_url, method: 'post') do %>
+  <%= form_tag(action_url, method: :post, class: 'input-form') do %>
     <%= auth_token %>
     <%= label_tag(:email, "Email: ") %>
     <%= text_field_tag("user[email]") %>

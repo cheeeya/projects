@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <h1 class="main-header">Music App</h1>
+    <h1 class="main-header"><%= link_to "Music App", bands_url %> </h1>
     <nav class='main-nav group'>
       <% if logged_in? %>
       <ul>
@@ -24,4 +24,9 @@
   <body>
     <%= yield %>
   </body>
+  <br />
+  <footer>
+    <%= yield :footer %>
+    <p>Music App</p>
+  </footer>
 </html>

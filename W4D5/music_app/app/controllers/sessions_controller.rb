@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
-    redirect_to users_url
+    redirect_to bands_url
   end
 end
