@@ -1,0 +1,7 @@
+<h1>Bands#edit</h1>
+
+<br>
+<% if flash.now[:error] %>
+  <li><%= flash.now[:error] %></li>
+<% end %>
+<%= render 'shared/form_band', action: :editband, band: @band %>
