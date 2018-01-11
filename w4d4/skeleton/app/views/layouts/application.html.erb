@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <section>
+        <form action=" <%= cats_url %>" method="get">
+          <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+          <input type="submit" value="Home">
+
+        </form>
+      </section>
+      <% if current_user %>
+        Welcome <%= current_user.username %>
+      <% end %>
+    </header>
+
+
+
+
+    <section>
+      <% if current_user %>
+        <form action=" <%= session_url %>" method="post">
+          <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Logout">
+        </form>
+        <br>
+        <section>
+          <form action=" <%= new_cat_rental_request_url %>" method="get">
+            <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+            <input type="submit" value="Rental Request">
+          </form>
+        </section>
+      <% else %>
+        <form action=" <%= new_session_url %>" method="get">
+          <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+          <input type="submit" value="Login">
+        </form>
+        <form action=" <%= new_user_url %>" method="get">
+          <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+          <input type="submit" value="Sign Up">
+        </form>
+      <% end %>
+    </section>
+    <%= yield %>
+  </body>
+</html>
