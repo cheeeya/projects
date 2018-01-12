@@ -1,0 +1,26 @@
+<% if action == :newalbum %>
+  <% action_url = new_album_url %>
+  <% method = :post %>
+  <% button_text = 'Create Album' %>
+<% elsif action == :editalbum %>
+  <% action_url = band_url(@band) %>
+  <% method = :patch %>
+  <% button_text = 'Update Album' %>
+<% end %>
+
+<% band_array = @bands.map { |band| [band.name, band.id] } %>
+
+<%= form_tag(action_url, method: method) do %>
+  <%= label_tag(:title, "Title: ") %>
+  <%= text_field_tag('album[title]', @album.title) %>
+  <%= label_tag(:band, "Band: ") %>
+  <%= select_tag("album[band_id]") %>
+  <%= options_for_select(band_array) %>
+  <%= label_tag(:live, "Live ") %>
+  <%= radio_button_tag('album[live]', true) %>
+  <%= label_tag(:live, 'Studio ') %>
+  <%= radio_button_tag('album[live]', false) %>
+  <%= label_tag(:year, "Year: ") %>
+  <%= text_field_tag('album[year]', @album.year) %>
+  <%= submit_tag(button_text) %>
+<% end %>

@@ -1,0 +1,23 @@
+
+.sections-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $sans-serif;
+  border-bottom: 1px solid $light-gray;
+  position: relative;
+  padding: 10px;
+}
+
+.sections-nav li {
+  margin-right: 13px;
+}
+
+.sections-nav ul {
+  display: flex;
+}
+
+.show:hover {
+  background-color: $light-gray;
+  text-decoration: none;
+}
