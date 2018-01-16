@@ -1,0 +1,42 @@
+
+.profile-picture > a {
+  display: block;
+}
+
+
+.profile-picture {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: -119px;
+  position: relative;
+}
+
+.profile-info > h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.profile-info > p {
+  margin-bottom: 20px;
+}
+
+.profile-nav {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-nav > ul > li {
+  border-top: 1px solid #ccc;
+  padding: 5px;
+}
+
+.profile-nav > ul > li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-nav > ul > li:hover {
+  background: #eee;
+  cursor: pointer;
+}

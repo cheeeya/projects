@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <% if logged_in? %>
+        <%= button_to 'Sign out', session_url, method: 'delete' %>
+        <p>Welcome <%= current_user.username %></p>
+      <% else %>
+        <%= link_to 'Sign up!', new_user_url %>
+        <%= link_to 'Login', new_session_url %>
+        <br>
+        <br>
+      <% end %>
+    </header>
+    <section>
+      <%= link_to "All subs", subs_url %>
+      <% if logged_in? %>
+        <%= link_to "Home", user_url(current_user) %>
+        <br>
+        <%= link_to 'Create Sub', new_sub_url %>
+      <% end %>
+    </section>
+
+    <%= yield %>
+  </body>
+</html>
