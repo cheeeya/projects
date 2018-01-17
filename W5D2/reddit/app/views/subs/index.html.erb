@@ -1,0 +1,9 @@
+<h1>Subs Index</h1>
+
+<%= render 'shared/form_error' %>
+
+<% if @subs %>
+  <% @subs.each do |s| %>
+    <li><%= link_to "#{s.title}", sub_url(s) %></li>
+  <% end %>
+<% end %>

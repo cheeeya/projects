@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  width: 860px;
+  margin: 0 auto;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-top: none;
+  background: white;
+  padding: 20px;
+  font-size: 14px;
+  color: gray;
+}
+
+footer > ul > li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+footer > ul > li:hover {
+  color: black;
+}
