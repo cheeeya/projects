@@ -1,0 +1,17 @@
+<% if action == :newband %>
+  <% action_url = bands_url %>
+  <% button_text = "Create band" %>
+  <% method = :post %>
+<% elsif action == :editband %>
+  <% action_url = band_url %>
+  <% button_text = "Confirm Edit" %>
+  <% method = :patch %>
+<% end %>
+
+
+<%= form_tag(action_url, method: method, class: "band-form") do %>
+  <%= auth_token %>
+  <%= label_tag(:name, "Band Name: ") %>
+  <%= text_field_tag("band[name]", @band.name) %>
+  <%= submit_tag(button_text) %>
+<% end %>
