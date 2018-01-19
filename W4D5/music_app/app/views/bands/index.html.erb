@@ -1,0 +1,16 @@
+<h1>Bands#index</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+<% end %>
+
+
+<br />
+<% @bands.each do |band| %>
+  <%= button_to band.name, band_url(band), method: 'get' %>
+<% end %>
+
+<br />
+<%= button_to("Add Band", new_band_url, method: :get) %>

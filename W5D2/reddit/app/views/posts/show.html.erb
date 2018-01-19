@@ -1,0 +1,25 @@
+<h1>Post: <%= @post.title %></h1>
+
+<%= render 'shared/form_error' %>
+
+<section>
+  <p>Author: <%= @post.author.username %></p>
+  <% if @post.url && !@post.url.empty? %>
+    <p>Url: <%= @post.url %></p>
+  <% end %>
+  <p>Content: <%= @post.content %></p>
+</section>
+
+<section>
+
+</section>
+<%= link_to "Leave a comment", new_post_comment_url(@post) %>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <%= comment.content %>
+  <% end %>
+</ul>
+
+<% if current_user.id == @post.author_id %>
+  <%= link_to "Edit Post", edit_post_url %>
+<% end %>
