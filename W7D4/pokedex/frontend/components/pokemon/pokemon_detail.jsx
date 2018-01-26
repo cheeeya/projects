@@ -40,7 +40,7 @@ class PokemonDetail extends React.Component {
           <div className="items-div">
             {
               items.map(item => (
-                <Link to={"/pokemon/" + pokemon.id + "/item/" + item.id} className="item-link">
+                <Link to={"/pokemon/" + pokemon.id + "/item/" + item.id} key={item.id} className="item-link">
                   <img className="item-image" src={item.image_url}></img>
                 </Link>
               ))
