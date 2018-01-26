@@ -1,0 +1,17 @@
+.main-header {
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.main-nav {
+  display: flex;
+  float: right;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.main-nav li {
+  list-style: none;
+  margin-bottom: 5px;
+}
